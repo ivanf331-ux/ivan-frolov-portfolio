@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Иван Фролов — Копирайтер</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #111;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ddd;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: #111;
+      color: #fff;
+      padding: 90px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.7fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 78px);
+      line-height: 0.98;
+      margin-bottom: 25px;
+      letter-spacing: -3px;
+    }
+
+    .hero-text {
+      max-width: 650px;
+      color: #cfcfcf;
+      font-size: 19px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .button-primary {
+      background: #fff;
+      color: #111;
+    }
+
+    .button-primary:hover {
+      background: #ddd;
+    }
+
+    .button-outline {
+      border: 1px solid #666;
+      color: #fff;
+    }
+
+    .button-outline:hover {
+      border-color: #fff;
+    }
+
+    .avatar {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: #292929;
+      border: 1px solid #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 62px;
+      font-weight: 700;
+      color: #fff;
+      margin-left: auto;
+    }
+
+    /* QUICK INFO */
+
+    .quick-info {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .quick-item {
+      padding: 25px 15px;
+      border-right: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .quick-item:last-child {
+      border-right: none;
+    }
+
+    .quick-item strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .quick-item span {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      font-size: 40px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .section-lead {
+      max-width: 700px;
+      color: #666;
+      font-size: 17px;
+      margin-bottom: 40px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #fff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .about-text {
+      color: #444;
+      font-size: 17px;
+    }
+
+    .about-text p + p {
+      margin-top: 18px;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .about-list div {
+      padding: 18px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      border: 1px solid #e2e2e2;
+    }
+
+    .about-list strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .about-list span {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio {
+      background: #f5f5f5;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      min-height: 260px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #aaa;
+    }
+
+    .card-number {
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
+
+    .card-link {
+      margin-top: auto;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    /* TESTS */
+
+    .tests {
+      background: #fff;
+    }
+
+    .test-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fafafa;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 20px 22px;
+      font-weight: 700;
+      font-size: 17px;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      float: right;
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .test-content {
+      padding: 0 22px 24px;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .test-content p {
+      margin-bottom: 12px;
+    }
+
+    .test-content ul,
+    .test-content ol {
+      margin: 10px 0 15px 22px;
+    }
+
+    .test-content li {
+      margin-bottom: 6px;
+    }
+
+    .test-answer {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 12px;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      background: #f5f5f5;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #111;
+      color: #fff;
+    }
+
+    .contact .section-lead {
+      color: #bbb;
+    }
+
+    .contact-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info p {
+      color: #bbb;
+      margin-bottom: 7px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      border-top: 1px solid #333;
+      color: #777;
+      padding: 25px 0;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .avatar {
+        margin: 10px 0 0;
+        width: 160px;
+        height: 160px;
+        font-size: 45px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .quick-item:nth-child(-n+2) {
+        border-bottom: 1px solid #ddd;
+      }
+
+      nav {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        align-items: flex-start;
+        padding: 16px 0;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 10px 16px;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .hero-text {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .quick-item {
+        border-right: 1px solid #ddd;
+      }
+
+      .quick-item:nth-child(even) {
+        border-right: none;
+      }
+
+      .quick-item:nth-child(3),
+      .quick-item:nth-child(4) {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container header-inner">
+
+      <div class="logo">Иван Фролов</div>
+
+      <nav>
+        <a href="#about">Обо мне</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#tests">Тестовые</a>
+        <a href="#skills">Навыки</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          Копирайтер · контент-автор
+        </div>
+
+        <h1>
+          Пишу понятно.<br>
+          Без лишнего.
+        </h1>
+
+        <p class="hero-text">
+          Статьи, посты для Telegram, тексты для сайтов и карточек товаров.
+          Работаю с AI-инструментами и всегда проверяю результат вручную.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a class="button button-primary" href="#portfolio">
+            Смотреть портфолио
+          </a>
+
+          <a
+            class="button button-outline"
+            href="https://hh.ru/resume/5af12393ff111692cb0039ed1f6b5836697361"
+            target="_blank"
+            rel="noopener"
+          >
+            Резюме на HH.ru
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div class="avatar">
+          ИФ
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUICK INFO -->
+
+  <div class="quick-info">
+
+    <div class="container quick-grid">
+
+      <div class="quick-item">
+        <strong>Статьи</strong>
+        <span>Информационные и коммерческие</span>
+      </div>
+
+      <div class="quick-item">
+        <strong>Telegram</strong>
+        <span>Посты и рекламные тексты</span>
+      </div>
+
+      <div class="quick-item">
+        <strong>Сайты</strong>
+        <span>Тексты и структура</span>
+      </div>
+
+      <div class="quick-item">
+        <strong>Маркетплейсы</strong>
+        <span>Карточки и отзывы</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Обо мне
+      </h2>
+
+      <p class="section-lead">
+        Начинающий копирайтер, который развивает навыки коммерческого
+        письма и работает над практическими и тестовыми задачами.
+      </p>
+
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            Мне важно, чтобы текст было легко читать и понимать с первого раза.
+            Поэтому стараюсь писать простым языком, без лишних оборотов и
+            шаблонных фраз.
+          </p>
+
+          <p>
+            Работаю с информационными и коммерческими текстами,
+            постами для Telegram, карточками товаров и текстами для сайтов.
+          </p>
+
+          <p>
+            Использую AI-инструменты как помощника, но всегда проверяю,
+            редактирую и дорабатываю готовый текст самостоятельно.
+          </p>
+
+        </div>
+
+
+        <div class="about-list">
+
+          <div>
+            <strong>Ответственный подход</strong>
+            <span>
+              Соблюдаю требования к заданию и сроки.
+            </span>
+          </div>
+
+          <div>
+            <strong>Внимание к деталям</strong>
+            <span>
+              Проверяю текст, структуру и формулировки.
+            </span>
+          </div>
+
+          <div>
+            <strong>Готов к тестовым</strong>
+            <span>
+              Готов выполнять тестовые задания перед началом работы.
+            </span>
+          </div>
+
+          <div>
+            <strong>Удалённая работа</strong>
+            <span>
+              Рассматриваю удалённые проекты и постоянную занятость.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PORTFOLIO -->
+
+  <section class="portfolio" id="portfolio">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Портфолио
+      </h2>
+
+      <p class="section-lead">
+        Примеры текстов и практических работ.
+        Полные материалы доступны в моём портфолио.
+      </p>
+
+
+      <div class="portfolio-grid">
+
+
+        <div class="card">
+
+          <div class="card-number">01 · ЖИЛОЙ КОМПЛЕКС</div>
+
+          <h3>ЖК «Северный»</h3>
+
+          <p>
+            Коммерческий текст для молодой семьи с ребёнком.
+            Акцент на повседневную жизнь, удобство и окружение.
+          </p>
+
+          <a
+            class="card-link"
+            href="https://drive.google.com/drive/folders/1Nj-gu-tTzMn0IlofKKYRaeYmgsK8ka6-?usp=drive_link"
+            target="_blank"
+            rel="noopener"
+          >
+            Открыть работу →
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-number">02 · ТОВАР</div>
+
+          <h3>Термокружка 450 мл</h3>
+
+          <p>
+            Текст для карточки товара с акцентом на практическое
+            использование и преимущества для покупателя.
+          </p>
+
+          <a
+            class="card-link"
+            href="https://drive.google.com/drive/folders/1Nj-gu-tTzMn0IlofKKYRaeYmgsK8ka6-?usp=drive_link"
+            target="_blank"
+            rel="noopener"
+          >
+            Открыть работу →
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-number">03 · TELEGRAM</div>
+
+          <h3>Спортивная одежда</h3>
+
+          <p>
+            Рекламный пост для Telegram с акцентом на предложение
+            «2 по цене 1» и понятным призывом к действию.
+          </p>
+
+          <a
+            class="card-link"
+            href="https://drive.google.com/drive/folders/1Nj-gu-tTzMn0IlofKKYRaeYmgsK8ka6-?usp=drive_link"
+            target="_blank"
+            rel="noopener"
+          >
+            Открыть работу →
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-number">04 · ТОВАР</div>
+
+          <h3>Робот-пылесос</h3>
+
+          <p>
+            Коммерческий текст о товаре с фокусом на реальные
+            сценарии использования.
+          </p>
+
+          <a
+            class="card-link"
+            href="https://drive.google.com/drive/folders/1Nj-gu-tTzMn0IlofKKYRaeYmgsK8ka6-?usp=drive_link"
+            target="_blank"
+            rel="noopener"
+          >
+            Открыть работу →
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-number">05 · ФИТНЕС</div>
+
+          <h3>Energym</h3>
+
+          <p>
+            Рекламный текст для фитнес-клуба с ориентацией
+            на интересы потенциального клиента.
+          </p>
+
+          <a
+            class="card-link"
+            href="https://drive.google.com/drive/folders/1Nj-gu-tTzMn0IlofKKYRaeYmgsK8ka6-?usp=drive_link"
+            target="_blank"
+            rel="noopener"
+          >
+            Открыть работу →
+          </a>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-number">06 · ДОСТАВКА ЕДЫ</div>
+
+          <h3>«Кастрюля»</h3>
+
+          <p>
+            Telegram-пост для сервиса домашней еды:
+            пять ужинов для двоих с доставкой на дом.
+          </p>
+
+          <a
+            class="card-link"
+            href="https://drive.google.com/drive/folders/1Nj-gu-tTzMn0IlofKKYRaeYmgsK8ka6-?usp=drive_link"
+            target="_blank"
+            rel="noopener"
+          >
+            Открыть работу →
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TESTS -->
+
+  <section class="tests" id="tests">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Тестовые задания
+      </h2>
+
+      <p class="section-lead">
+        Примеры выполненных тестовых заданий.
+        Ответы размещены непосредственно на сайте.
+      </p>
+
+
+      <div class="test-list">
+
+
+        <!-- TEST 1 -->
+
+        <details>
+
+          <summary>
+            1. Классификация отзывов на маркетплейсах
+          </summary>
+
+          <div class="test-content">
+
+            <p>
+              Задача — определить, какой шаблон ответа использовать
+              для каждого отзыва, а какие обращения передать менеджеру.
+            </p>
+
+            <div class="test-answer">
+
+              <p><strong>Ответы:</strong></p>
+
+              <ol>
+                <li>А</li>
+                <li>В</li>
+                <li>Б</li>
+                <li>Передать менеджеру</li>
+                <li>Ответить самостоятельно</li>
+                <li>Передать менеджеру</li>
+              </ol>
+
+              <p>
+                <strong>Ответ на отзыв №5:</strong>
+              </p>
+
+              <p>
+                Спасибо за обратную связь! Нам жаль, что у вас осталось
+                такое впечатление о качестве товара. Мы обязательно учтём
+                ваше мнение и будем работать над тем, чтобы наши товары
+                соответствовали ожиданиям покупателей.
+              </p>
+
+            </div>
+
+          </div>
+
+        </details>
+
+
+        <!-- TEST 2 -->
+
+        <details>
+
+          <summary>
+            2. Корректура текста
+          </summary>
+
+          <div class="test-content">
+
+            <p>
+              Задание на поиск и исправление ошибок в рекламном тексте.
+            </p>
+
+            <div class="test-answer">
+
+              <p>
+                Мы запускаем новую линейку уходовой косметики, которая
+                подойдет абсолютно всем девушкам, которые ценят качество
+                и натуральный состав. В составе только натуральные
+                компоненты, которые увлажняют кожу, делают её более мягкой
+                и защищают от негативного воздействия окружающей среды.
+                Уже с 15 марта вы сможете приобрести продукцию на нашем
+                сайте и маркетплейсах.
+              </p>
+
+            </div>
+
+          </div>
+
+        </details>
+
+
+        <!-- TEST 3 -->
+
+        <details>
+
+          <summary>
+            3. Ответ клиенту на претензию
+          </summary>
+
+          <div class="test-content">
+
+            <p>
+              Требовалось подготовить ответ клиенту на сообщение
+              о задержке доставки.
+            </p>
+
+            <div class="test-answer">
+
+              <p>
+                Здравствуйте, Алена! Спасибо за ваш отзыв. Нам очень жаль
+                что доставка задержалась, но к сожалению транспортная
+                компания иногда переносит сроки. Мы обязательно разберемся
+                в данной ситуации и свяжемся с вами в течении 2-3 дней.
+                Надеемся на ваше понимание.
+              </p>
+
+            </div>
+
+          </div>
+
+        </details>
+
+
+        <!-- TEST 4 -->
+
+        <details>
+
+          <summary>
+            4. Анализ конкурентов школ детейлинга
+          </summary>
+
+          <div class="test-content">
+
+            <p>
+              Проведён анализ восьми конкурентов в сфере обучения
+              детейлингу.
+            </p>
+
+            <p>
+              В ходе анализа были выделены основные предложения,
+              форматы обучения и способы подачи информации.
+            </p>
+
+            <p>
+              Отдельно рассмотрена школа Leraton.
+            </p>
+
+            <p>
+              Были выделены три основные идеи для развития предложения:
+            </p>
+
+            <ul>
+              <li>
+                сделать программу обучения максимально прозрачной;
+              </li>
+              <li>
+                показать первый практический результат уже на раннем этапе;
+              </li>
+              <li>
+                разделить обучение на понятные уровни:
+                «Старт с нуля» → «Профессиональный уровень» →
+                отдельные специализации.
+              </li>
+            </ul>
+
+          </div>
+
+        </details>
+
+
+        <!-- TEST 5 -->
+
+        <details>
+
+          <summary>
+            5. SEO-статья про закрытые тарифы сотовых операторов
+          </summary>
+
+          <div class="test-content">
+
+            <p>
+              Тестовое задание на подготовку SEO-статьи о закрытых
+              тарифах мобильных операторов.
+            </p>
+
+            <p>
+              В работе использовалась структура с H1 и H2, тематические
+              ключевые фразы, логичные абзацы и списки.
+            </p>
+
+            <p>
+              В качестве дополнительного источника использовался
+              сайт 101 Internet.
+            </p>
+
+          </div>
+
+        </details>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section class="skills" id="skills">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Навыки
+      </h2>
+
+      <p class="section-lead">
+        Инструменты и направления, с которыми я работаю.
+      </p>
+
+
+      <div class="skills-grid">
+
+        <div class="skill">Копирайтинг</div>
+        <div class="skill">Статьи</div>
+        <div class="skill">Telegram-посты</div>
+        <div class="skill">Тексты для сайтов</div>
+        <div class="skill">Карточки товаров</div>
+        <div class="skill">Редактура</div>
+        <div class="skill">Корректура</div>
+        <div class="skill">Отзывы</div>
+        <div class="skill">Деловая переписка</div>
+        <div class="skill">AI-инструменты</div>
+        <div class="skill">ChatGPT</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Давайте работать вместе
+      </h2>
+
+      <p class="section-lead">
+        Рассматриваю удалённую работу, тестовые задания,
+        отдельные проекты и постоянное сотрудничество.
+      </p>
+
+
+      <div class="contact-box">
+
+        <div class="contact-info">
+
+          <p>
+            Готов обсудить задачу и условия сотрудничества.
+          </p>
+
+          <p>
+            Telegram: @ivanfrolov331
+          </p>
+
+        </div>
+
+
+        <div class="hero-buttons">
+
+          <a
+            class="button button-primary"
+            href="https://t.me/ivanfrolov331"
+            target="_blank"
+            rel="noopener"
+          >
+            Написать в Telegram
+          </a>
+
+          <a
+            class="button button-outline"
+            href="https://hh.ru/resume/5af12393ff111692cb0039ed1f6b5836697361"
+            target="_blank"
+            rel="noopener"
+          >
+            Открыть резюме HH.ru
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      © 2026 Иван Фролов · Копирайтер
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
