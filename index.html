@@ -340,6 +340,28 @@
       font-size: 17px;
     }
 
+    .portfolio-video-wrap {
+      margin: 18px auto 8px;
+      max-width: 360px;
+    }
+
+    .portfolio-video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      background: #111;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+    }
+
+    .video-note {
+      margin-top: 10px;
+      color: #777;
+      font-size: 13px;
+      text-align: center;
+    }
+
     /* TESTS */
 
     .tests {
@@ -759,7 +781,7 @@
       </h2>
 
       <p class="section-lead">
-        Примеры текстов и практических работ.
+        Примеры текстов, практических работ и монтажа коротких видео.
         Нажмите «Открыть работу», чтобы посмотреть материал прямо на сайте.
       </p>
 
@@ -1131,6 +1153,43 @@
           </details>
         </div>
 
+        <!-- 10 -->
+        <div class="card">
+          <div class="card-number">10 · ВИДЕО / SHORTS</div>
+          <h3>KIBERone — вертикальный ролик</h3>
+          <p>Тестовая работа: короткий динамичный ролик для соцсетей из готовых фото- и видеоматериалов.</p>
+
+          <details class="work-details">
+            <summary>Открыть работу</summary>
+
+            <div class="work-text">
+              <h4>Задача</h4>
+              <p>Собрать короткий вертикальный ролик из предоставленных материалов KIBERone для публикации в социальных сетях.</p>
+
+              <h4>Что сделал</h4>
+              <p>Отобрал фрагменты, выстроил последовательность кадров, адаптировал исходники под вертикальный формат 9:16, добавил титры, подобрал музыкальное сопровождение и подготовил финальную версию видео.</p>
+
+              <h4>Формат</h4>
+              <p>Вертикальное видео · 14,8 сек · 720 × 1280 · MP4.</p>
+
+              <h4>Результат</h4>
+              <div class="portfolio-video-wrap">
+                <video
+                  class="portfolio-video"
+                  controls
+                  playsinline
+                  preload="metadata"
+                  poster="kiberone-poster.jpg"
+                >
+                  <source src="kiberone-video.mp4" type="video/mp4">
+                  Ваш браузер не поддерживает воспроизведение видео.
+                </video>
+                <div class="video-note">Короткий вертикальный ролик KIBERone</div>
+              </div>
+            </div>
+          </details>
+        </div>
+
       </div>
 
     </div>
@@ -1459,6 +1518,7 @@
         <div class="skill">Деловая переписка</div>
         <div class="skill">AI-инструменты</div>
         <div class="skill">ChatGPT</div>
+        <div class="skill">Монтаж коротких видео</div>
 
       </div>
 
